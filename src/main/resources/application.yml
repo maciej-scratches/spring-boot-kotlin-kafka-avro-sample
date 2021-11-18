@@ -1,0 +1,16 @@
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+    consumer:
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      group-id: transport-schedules-producer
+    bootstrap-servers: localhost:9092
+    properties:
+      bootstrap-servers: localhost:9092
+      schema.registry.url: http://localhost:8081
+      specific.avro.reader: true
+      spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+      spring.deserializer.value.delegate.class: io.confluent.kafka.serializers.KafkaAvroDeserializer

@@ -1,0 +1,10 @@
+{
+  "name": "Person",
+  "type": "record",
+  "namespace": "com.example.avro",
+  "doc": "Just useful for testing the system",
+  "aliases": [],
+  "fields": [
+    { "name": "name", "type": "string" }
+  ]
+}
